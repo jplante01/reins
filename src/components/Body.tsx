@@ -12,8 +12,8 @@ const DomainsCarousel = () => {
   return (
     <div>
       <ul className="flex flex-row gap-2 justify-center mt-16">
-        {data.map(domain => (
-          <DomainButton name={domain.domain} />
+        {data.map((domain, idx)=> (
+          <DomainButton key={idx} name={domain.domain} />
         ))}
       </ul>
     </div>
