@@ -1,6 +1,5 @@
-import data from '../data/data.json';
 
-function DomainsCarousel () {
+function DomainsCarousel ({ data }) {
   return (
     <div>
       <ul className="flex flex-row gap-2 justify-center mt-16">
