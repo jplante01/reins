@@ -1,10 +1,6 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
 
-function DomainsCarousel ({ data }) {
-  const [selectedDomain, setSelectedDomain] = useState(null);
+function DomainsCarousel ({ setSelectedDomain, data }) {
 
-  useEffect(() => {console.log(selectedDomain)},[selectedDomain])
   return (
     <div>
       <ul className="flex flex-row gap-2 justify-center mt-16">
