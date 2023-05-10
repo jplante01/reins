@@ -9,13 +9,13 @@ function Body() {
   if (selectedDomain !== null) {
     domain = data[selectedDomain];
   } else {
-    domain = 'Please select a domain.'
+    domain = null;
   }
 
   return (
     <>
-      <div  className="h-full ml-16 w-full inline bg-gray-700 flex flex-col">
-        <DomainsCarousel setSelectedDomain={setSelectedDomain} data={data}/>
+      <div className="h-full ml-16 w-full inline bg-gray-700 flex flex-col">
+        <DomainsCarousel setSelectedDomain={setSelectedDomain} data={data} />
         <DomainTree domain={domain} />
       </div>
     </>

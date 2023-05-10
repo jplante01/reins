@@ -1,53 +1,50 @@
 [
-	{
-		"domain": "Work",
-		"areas": [
-			{
-				"area": "coding study",
-				"projects": [
-					{
-						"projectName": "reins project",
-						"tasks": [
-							{
-								"taskName": "research and setup",
-								"notes": [
-									"Setup projects with vite, using tailwind and typescript"
-								]
-							},
-							{
-								"taskName": "mockup data",
-								"notes": [
-									"Create basic data",
-									"Create separate activeTasks json array as a file in /data"
-								]
-							},
-							{
-								"taskName": "create static site based on data",
-								"notes": [
-									"start by implementing static active tasks view with timer/visualization"
-								]
-							}
-						],
-						"timeSpent": 3.4
-					},
-					{
-						"projectName": "memory game",
-						"tasks": [
-
-						],
-						"timeSpent": 0
-					}
-				]
-			}
-		]
-
-	},
-	{
-		"domain": "Home",
-		"areas": []
-	},
-	{
-		"domain": "Social",
-		"areas": []
-	}
+  {
+    "domainName": "Work",
+    "areas": [
+      {
+        "areaName": "coding study",
+        "projects": [
+          {
+            "projectName": "reins project",
+            "tasks": [
+              {
+                "taskName": "research and setup",
+                "notes": [
+                  "Setup projects with vite, using tailwind and typescript"
+                ]
+              },
+              {
+                "taskName": "mockup data",
+                "notes": [
+                  "Create basic data",
+                  "Create separate activeTasks json array as a file in /data"
+                ]
+              },
+              {
+                "taskName": "create static site based on data",
+                "notes": [
+                  "start by implementing static active tasks view with timer/visualization"
+                ]
+              }
+            ],
+            "timeSpent": 3.4
+          },
+          {
+            "projectName": "memory game",
+            "tasks": [],
+            "timeSpent": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "domainName": "Home",
+    "areas": []
+  },
+  {
+    "domainName": "Social",
+    "areas": []
+  }
 ]

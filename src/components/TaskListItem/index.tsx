@@ -1,7 +1,5 @@
 function TaskListItem() {
-  return (
-      <li className="text-center">Study</li>
-  )
+  return <li className="text-center">Study</li>;
 }
 
 export default TaskListItem;
