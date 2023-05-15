@@ -55,7 +55,25 @@ const TasksList = ({ tasks }) => {
       <ul>
         {tasks.map((task, idx) => {
           return (
-            <li className="ml-20 text-m underline" key={idx}>{task.taskName}</li>
+            <>
+              <li className="ml-20 text-m underline" key={idx}>{task.taskName}</li>
+              <NotesList notes={task.notes}/>
+            </>
+          )
+        })}
+      </ul>
+    )
+  } else {
+    return null;
+  }
+}
+const NotesList = ({ notes }) => {
+  if(notes) {
+    return (
+      <ul>
+        {notes.map((note, idx) => {
+          return (
+            <li className="ml-24 text-m text-gray-400" key={idx}>{note}</li>
           )
         })}
       </ul>

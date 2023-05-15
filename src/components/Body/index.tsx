@@ -16,7 +16,9 @@ function Body() {
     <>
       <div className="h-full ml-16 w-full inline bg-gray-700 flex flex-col">
         <DomainsCarousel setSelectedDomain={setSelectedDomain} data={data} />
-        <DomainTree domain={domain} />
+        <div className="flex flex-col">
+          <DomainTree domain={domain} />
+        </div>
       </div>
     </>
   );
