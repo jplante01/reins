@@ -1,9 +1,9 @@
 const DomainTree = ({ selectedDomain, data }) => {
   if(data[selectedDomain]) {
     return (
-    <>
+    <div className="pt-16">
       <AreasList areas={data[selectedDomain].areas}/>
-    </>
+    </div>
     )
   } else {
     return null;
@@ -36,7 +36,7 @@ const ProjectsList = ({ projects }) => {
         {projects.map((project, idx) => {
           return (
             <>
-              <li className="ml-16 text-l" key={project.projectName}>{project.projectName}</li>
+              <li className="ml-16 text-2xl" key={project.projectName}>{project.projectName}</li>
               <TasksList tasks={project.tasks}/>
             </>
           )
@@ -54,7 +54,7 @@ const TasksList = ({ tasks }) => {
         {tasks.map((task, idx) => {
           return (
             <>
-              <li className="ml-20 text-m underline" key={idx}>{task.taskName}</li>
+              <li className="ml-20 text-m underline" key={task.taskName}>{task.taskName}</li>
               <NotesList notes={task.notes}/>
             </>
           )
@@ -71,7 +71,7 @@ const NotesList = ({ notes }) => {
       <ul>
         {notes.map((note, idx) => {
           return (
-            <li className="ml-24 text-m text-gray-400" key={idx}>{note}</li>
+            <li className="ml-24 text-m text-gray-400" key={note}>{note}</li>
           )
         })}
       </ul>
