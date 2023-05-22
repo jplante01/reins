@@ -34,25 +34,37 @@ const AreasList = ({ areas }) => {
 
 const ProjectsList = ({ projects }) => {
   const [newTask, setNewTask] = useState('');
+  const [newTaskParent, setNewTaskParent] = useState('');
+  
+  const handleNewProjectClick = (e) => {
+    console.log(e.target);
+    if (newTaskParent === e.target.getAttribute('data-parent')) {
+      setNewTaskParent('')
+    } else {
+      setNewTaskParent(e.target.getAttribute('data-parent'))
+    }
+  }
 
   if(projects) {
     return (
       <>
       <ul>
         {projects.map((project, idx) => {
+          console.log([newTaskParent, project.projectName]);
           return (
             <>
               <div className="flex mb-6">
                 <div className="flex content-center bg-slate-900 rounded-r-xl">
                   <li className="ml-16 mr-2 text-3xl text-slate-200" key={project.projectName}>{project.projectName}</li>
-                  <AiOutlinePlus size='32' className="text-slate-400 hover:text-teal-500 hover:cursor-pointer m-auto"/>
-                  <input
+                  <AiOutlinePlus size='32' data-parent={project.projectName} onClick={handleNewProjectClick} className="text-slate-400 hover:text-teal-500 hover:cursor-pointer m-auto"/>
+                  {newTaskParent === project.projectName && <input
                     className="bg-gray-700 border-b-2 border-slate-900"
                     type="text"
+                    data-parent={project.projectName}
                     value={newTask}
                     onChange={(e) => setNewTask(e.target.value)}
                   > 
-                  </input>
+                  </input>}
                 </div>
                 </div>
                 <TasksList tasks={project.tasks}/>
