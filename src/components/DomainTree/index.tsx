@@ -1,10 +1,10 @@
-const DomainTree = ({ domain }) => {
-  console.log(domain);
-  if(domain) {
+const DomainTree = ({ selectedDomain, data }) => {
+  console.log(data);
+  if(data[selectedDomain]) {
     return (
     <>
-      <h1 className="text-2xl ml-4">{domain.domainName}</h1>
-      <AreasList areas={domain.areas}/>
+      <h1 className="text-2xl ml-4">{data[selectedDomain].domainName}</h1>
+      <AreasList areas={data[selectedDomain].areas}/>
     </>
     )
   } else {
