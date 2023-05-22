@@ -1,4 +1,5 @@
 import { AiOutlinePlus } from 'react-icons/ai';
+import { useState } from 'react';
 
 const DomainTree = ({ selectedDomain, data }) => {
   if(data[selectedDomain]) {
@@ -32,6 +33,8 @@ const AreasList = ({ areas }) => {
 }
 
 const ProjectsList = ({ projects }) => {
+  const [newTask, setNewTask] = useState('');
+
   if(projects) {
     return (
       <>
@@ -43,6 +46,13 @@ const ProjectsList = ({ projects }) => {
                 <div className="flex content-center bg-slate-900 rounded-r-xl">
                   <li className="ml-16 mr-2 text-3xl text-slate-200" key={project.projectName}>{project.projectName}</li>
                   <AiOutlinePlus size='32' className="text-slate-400 hover:text-teal-500 hover:cursor-pointer m-auto"/>
+                  <input
+                    className="bg-gray-700 border-b-2 border-slate-900"
+                    type="text"
+                    value={newTask}
+                    onChange={(e) => setNewTask(e.target.value)}
+                  > 
+                  </input>
                 </div>
                 </div>
                 <TasksList tasks={project.tasks}/>
