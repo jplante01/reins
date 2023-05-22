@@ -23,7 +23,7 @@ const DomainButton = ({ selectedDomain, setSelectedDomain, idx, name }) => {
   return (
     <button
       onClick={handleClick}
-      className={`shadow-lg text-gray-200 ${selectedDomain === idx ? 'text-red-500' : ''} focus:text-2xl bg-gray-500 hover:bg-gray-600 px-6 py-4 rounded-lg text-xl`}
+      className={`shadow-lg text-gray-200 ${selectedDomain === idx ? 'text-red-500' : ''} bg-gray-500 hover:bg-gray-600 px-6 py-4 rounded-lg text-xl`}
     >
       {name}
     </button>

@@ -1,3 +1,5 @@
+import { AiOutlinePlus } from 'react-icons/ai';
+
 const DomainTree = ({ selectedDomain, data }) => {
   if(data[selectedDomain]) {
     return (
@@ -38,8 +40,9 @@ const ProjectsList = ({ projects }) => {
           return (
             <>
               <div className="flex mb-6">
-                <div className="bg-slate-900 px-10">
-                  <li className="ml-16 text-3xl text-slate-50" key={project.projectName}>{project.projectName}</li>
+                <div className="flex content-center bg-slate-900 rounded-r-xl">
+                  <li className="ml-16 mr-2 text-3xl text-slate-200" key={project.projectName}>{project.projectName}</li>
+                  <AiOutlinePlus size='32' className="text-slate-400 hover:text-teal-500 hover:cursor-pointer m-auto"/>
                 </div>
                 </div>
                 <TasksList tasks={project.tasks}/>
