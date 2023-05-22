@@ -1,9 +1,7 @@
 const DomainTree = ({ selectedDomain, data }) => {
-  console.log(data);
   if(data[selectedDomain]) {
     return (
     <>
-      <h1 className="text-2xl ml-4">{data[selectedDomain].domainName}</h1>
       <AreasList areas={data[selectedDomain].areas}/>
     </>
     )
@@ -19,7 +17,7 @@ const AreasList = ({ areas }) => {
         {areas.map((area, idx) => {
           return (
             <>
-              <li className="text-xl ml-8" key={idx}>{area.areaName}</li>
+              <li className="text-3xl ml-8 text-center" key={area.areaName}>{area.areaName}</li>
               <ProjectsList projects={area.projects}/>
             </>
           )
@@ -38,7 +36,7 @@ const ProjectsList = ({ projects }) => {
         {projects.map((project, idx) => {
           return (
             <>
-              <li className="ml-16 text-l" key={idx}>{project.projectName}</li>
+              <li className="ml-16 text-l" key={project.projectName}>{project.projectName}</li>
               <TasksList tasks={project.tasks}/>
             </>
           )
