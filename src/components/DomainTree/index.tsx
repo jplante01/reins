@@ -17,7 +17,7 @@ const AreasList = ({ areas }) => {
         {areas.map((area, idx) => {
           return (
             <>
-              <li className="text-3xl ml-8 text-center" key={area.areaName}>{area.areaName}</li>
+              <li className="text-3xl ml-8 mb-6 text-center" key={area.areaName}>{area.areaName}</li>
               <ProjectsList projects={area.projects}/>
             </>
           )
@@ -32,16 +32,23 @@ const AreasList = ({ areas }) => {
 const ProjectsList = ({ projects }) => {
   if(projects) {
     return (
+      <>
       <ul>
         {projects.map((project, idx) => {
           return (
             <>
-              <li className="ml-16 text-2xl" key={project.projectName}>{project.projectName}</li>
-              <TasksList tasks={project.tasks}/>
+              <div className="flex mb-6">
+                <div className="bg-slate-900 px-10">
+                  <li className="ml-16 text-3xl text-slate-50" key={project.projectName}>{project.projectName}</li>
+                </div>
+                </div>
+                <TasksList tasks={project.tasks}/>
+                <div className="pt-10"></div>
             </>
           )
         })}
       </ul>
+      </>
     )
   } else {
     return null;
@@ -54,7 +61,7 @@ const TasksList = ({ tasks }) => {
         {tasks.map((task, idx) => {
           return (
             <>
-              <li className="ml-20 text-m underline" key={task.taskName}>{task.taskName}</li>
+              <li className="ml-20 mt-8 text-xl underline" key={task.taskName}>{task.taskName}</li>
               <NotesList notes={task.notes}/>
             </>
           )
@@ -71,7 +78,7 @@ const NotesList = ({ notes }) => {
       <ul>
         {notes.map((note, idx) => {
           return (
-            <li className="ml-24 text-m text-gray-400" key={note}>{note}</li>
+            <li className="ml-24 mt-2 text-xl text-gray-400" key={note}>{note}</li>
           )
         })}
       </ul>
