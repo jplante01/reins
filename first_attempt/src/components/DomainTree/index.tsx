@@ -39,7 +39,8 @@ const ProjectsList = ({ projects }) => {
   const handleNewProjectClick = (e) => {
     console.log(e.target);
     if (newTaskParent === e.target.getAttribute('data-parent')) {
-      setNewTaskParent('')
+      setNewTaskParent('');
+      setNewTask('');
     } else {
       setNewTaskParent(e.target.getAttribute('data-parent'))
     }
@@ -50,7 +51,6 @@ const ProjectsList = ({ projects }) => {
       <>
       <ul>
         {projects.map((project, idx) => {
-          console.log([newTaskParent, project.projectName]);
           return (
             <>
               <div className="flex mb-6">

@@ -1,4 +1,9 @@
-function DomainsCarousel({ selectedDomain, setSelectedDomain, data }) {
+import { useContext } from 'react';
+import { MyContext } from '../../context/MyContext';
+
+function DomainsCarousel({ selectedDomain, setSelectedDomain }) {
+  const { data, updateData } = useContext(MyContext);
+
   return (
     <div>
       <ul className="flex flex-row gap-2 justify-center mt-16">

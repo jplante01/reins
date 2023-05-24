@@ -23,9 +23,9 @@ function TaskNavigator() {
   return (
       <div className="h-full ml-16 w-full inline bg-gray-700 flex flex-col">
         <DomainsCarousel selectedDomain={selectedDomain} setSelectedDomain={setSelectedDomain} data={data} />
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <DomainTree selectedDomain={selectedDomain} data={data} />
-        </div>
+        </div> */}
       </div>
   );
 
