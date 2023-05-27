@@ -2,8 +2,8 @@ import { Link, Outlet } from 'react-router-dom';
 
 function Root() {
   return (
-    <>
-      <div>
+    <div className="flex h-screen w-screen">
+      <div className="fixed top-0 left-0 h-screen w-16 bg-gray-900">
         <nav>
           <ul>
             <li>
@@ -15,10 +15,10 @@ function Root() {
           </ul>
         </nav>
       </div>
-      <div>
+      <div className="h-full ml-16 w-full inline bg-gray-700 flex flex-col">
         <Outlet />
       </div>
-    </>
+    </div>
   );
 }
 
