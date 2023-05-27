@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
+import { IoListCircleOutline } from 'react-icons/io5';
 
 function Root() {
   return (
@@ -11,6 +12,12 @@ function Root() {
             </li>
             <li>
               <Link to="home">Home</Link>
+            </li>
+            <li>
+              <IoListCircleOutline
+                size="90%"
+                className="text-slate-400 hover:text-teal-500 hover:cursor-pointer m-auto"
+              />
             </li>
           </ul>
         </nav>
