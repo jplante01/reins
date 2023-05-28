@@ -26,7 +26,7 @@ function Root() {
           </ul>
         </nav>
       </div>
-      <div className="h-full ml-16 w-full inline bg-gray-700 flex flex-col">
+      <div className="h-full ml-16 w-full bg-gray-700 flex flex-col">
         <Outlet />
       </div>
     </div>
