@@ -6,7 +6,7 @@ import './index.css';
 import Root from './routes/root';
 import ErrorPage from './error-page';
 import Home from './routes/Home';
-import Tasks from './routes/Tasks';
+import TasksView from './routes/TasksView';
 
 const router = createBrowserRouter([
   {
@@ -19,8 +19,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'tasks',
-        element: <Tasks />,
+        path: 'tasks-view',
+        element: <TasksView />,
       },
     ],
   },

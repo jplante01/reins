@@ -16,7 +16,7 @@ function Root() {
               </Link>
             </li>
             <li>
-              <Link to="tasks">
+              <Link to="tasks-view">
                 <IoListCircleOutline
                   size="80%"
                   className="text-slate-400 hover:text-teal-500 hover:cursor-pointer m-auto"
