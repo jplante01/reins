@@ -2,17 +2,21 @@ import { useContext, useState } from 'react';
 import { DataContextProvider, DataContext } from '../contexts/DataContext';
 
 function TasksView() {
+  const [selectedDomain, setSelectedDomain] = useState(null);
   return (
     <DataContextProvider>
-      <Domains />
+      <Domains
+        selectedDomain={selectedDomain}
+        setSelectedDomain={setSelectedDomain}
+      />
+      <Areas selectedDomain={selectedDomain} />
     </DataContextProvider>
   );
 }
 
-function Domains() {
+function Domains({ selectedDomain, setSelectedDomain }) {
   const { dataObj, setDataObj } = useContext(DataContext);
   // console.log([dataObj, setDataObj]);
-  const [selectedDomain, setSelectedDomain] = useState(null);
   return (
     <div>
       <ul className="flex flex-row gap-2 justify-center mt-16">
@@ -34,7 +38,6 @@ function DomainButton({ selectedDomain, setSelectedDomain, name }) {
   function handleClick() {
     if (selectedDomain !== name) {
       setSelectedDomain(name);
-      console.log(selectedDomain);
     }
   }
   return (
@@ -49,4 +52,21 @@ function DomainButton({ selectedDomain, setSelectedDomain, name }) {
   );
 }
 
+function Areas({ selectedDomain }) {
+  const { dataObj, setDataObj } = useContext(DataContext);
+  const domain = dataObj.find((obj) => obj.domainName === selectedDomain);
+  console.log([selectedDomain, dataObj, domain]);
+  if (domain) {
+    return (
+      <ul>
+        {domain.areas.map((area) => (
+          <li className="text-3xl ml-8 mb-6 text-center" key={area.areaName}>
+            {area.areaName}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+  return null;
+}
 export default TasksView;
